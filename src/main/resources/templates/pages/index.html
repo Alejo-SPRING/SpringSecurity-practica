@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{layouts/template :: head}">
+</head>
+<body>
+	<nav th:replace="~{layouts/template :: nav-login}"></nav>
+	<main class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="card card-body">
+					<h3 class="text-center">Información</h3>
+					<hr/>
+					<h1 class="text-primary text-center" sec:authentication="name"></h1>
+					<h3 class="text-primary" sec:authentication="principal.authorities"></h3>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{layouts/template :: footer}"></footer>
+</body>
+</html>

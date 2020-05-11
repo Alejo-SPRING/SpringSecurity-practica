@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layouts/template :: head}">
+</head>
+<body>
+	<nav th:replace="~{layouts/template :: nav}"></nav>
+	<main class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="card card-body border-danger">
+					<h1 class="text-center text-danger">Error 403!</h1>
+					<hr class="bg-danger"/>
+					<h2 class="text-danger">
+						No tienes permisos para solicitar este recurso!
+					</h2>
+					<a th:href="@{/ingresar}" class="btn btn-outline-danger">Regresar</a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{layouts/template :: footer}"></footer>
+</body>
+</html>

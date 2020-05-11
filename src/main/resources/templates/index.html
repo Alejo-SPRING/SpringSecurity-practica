@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layouts/template :: head}">
+</head>
+<body>
+	<nav th:replace="~{layouts/template :: nav-index}"></nav>
+	<main class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-6">
+				<div class="card card-body">
+					<h3 class="text-center text-primary">Ingresar</h3>
+					<hr class="bg-primary" />
+					<form th:action="@{/login}" method="post">
+						<div class="row">
+							<div class="col-12">
+								<label for="username">Correo</label> <input type="email"
+									placeholder="Correo electronico" class="form-control mb-3"
+									id="username" name="username" /> <label for="password">Contraseña</label>
+								<input type="password" placeholder="**************"
+									id="password" name="password" class="form-control mb-3" />
+								<div th:if="${mensaje}" class="alert alert-danger">
+									<p th:if="${mensaje}" class="text-danger" th:text="${mensaje}"></p>
+									<button type="button" class="close" data-dismiss="alert"></button>
+								</div>
+								<button type="submit" class="btn btn-outline-primary btn-block">Ingresar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{layouts/template :: footer}"></footer>
+</body>
+</html>
